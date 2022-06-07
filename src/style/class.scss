@@ -1,0 +1,25 @@
+page {
+  background-color: $uni-bg-color-grey;
+  /* #ifndef APP-NVUE */
+  padding-bottom: calc(constant(safe-area-inset-bottom) + 40rpx);
+  padding-bottom: calc(env(safe-area-inset-bottom) + 40rpx);
+  /* #endif */
+}
+
+.module-wrap {
+  background: #fff;
+
+  .title {
+    font-size: 40rpx;
+    color: #000;
+  }
+
+  .module-list {
+    gap: 30rpx;
+
+    .tit {
+      font-size: 20rpx;
+      color: #333;
+    }
+  }
+}
