@@ -18,8 +18,13 @@ page {
     gap: 30rpx;
 
     .tit {
+      font-size: 28rpx;
+      color: #000;
+    }
+
+    .txt {
       font-size: 20rpx;
-      color: #333;
+      color: #666;
     }
   }
 }

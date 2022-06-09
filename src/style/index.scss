@@ -20,6 +20,46 @@ page {
   --base-focus: 101, 111, 127;
   --white: 255, 255, 255;
   --black: 0, 0, 0;
+
+
+  // 组件公共样式
+  --type-default: 51, 54, 57;
+  --type-primary: 32, 128, 240;
+  --type-error: 250, 53, 52;
+  --type-warning: 240, 160, 32;
+  --type-success: 24, 160, 88;
+  --type-info: 144, 147, 153;
+
+  --type-default-light: 51, 54, 57;
+  --type-primary-light: 236, 245, 255;
+  --type-error-light: 254, 240, 240;
+  --type-warning-light: 253, 246, 236;
+  --type-success-light: 219, 241, 225;
+  --type-info-light: 244, 244, 245;
+
+  --type-default-dark: 51, 54, 57;
+  --type-primary-dark: 43, 133, 228;
+  --type-error-dark: 208, 48, 80;
+  --type-warning-dark: 242, 145, 0;
+  --type-success-dark: 24, 181, 102;
+  --type-info-dark: 130, 132, 138;
+
+  --type-default-disabled: 51, 54, 57;
+  --type-primary-disabled: 160, 207, 255;
+  --type-error-disabled: 250, 182, 182;
+  --type-warning-disabled: 252, 189, 113;
+  --type-success-disabled: 113, 213, 161;
+  --type-info-disabled: 200, 201, 204;
+
+  --type-main-color: 0, 0, 0;
+  --type-content-color: 153, 153, 153;
+  --type-tips-color: 144, 147, 153;
+  --type-light-color: 192, 196, 204;
+  --type-border-color: 228, 231, 237;
+  --type-bg-color: 243, 244, 246;
+
+  --type-opacity: 0.7;
+  --type-transparent: transparent;
 }
 image {
   display: block;
@@ -27,17 +67,31 @@ image {
 view {
   box-sizing: border-box;
 }
-button.clear {
-  padding: 0;
-  margin: 0;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  outline: none;
-
-  &::after {
-    display: none;
-  }
+.border-bottom,
+.border-top {
+  position: relative;
+}
+.border-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(var(--type-border-color));
+  transform-origin: 50% 100%;
+  transform: scaleY(.5);
+}
+.border-top::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(var(--type-border-color));
+  transform-origin: 50% 100%;
+  transform: scaleY(.5);
 }
 .statusbar {
   padding-top: var(--status-bar-height);

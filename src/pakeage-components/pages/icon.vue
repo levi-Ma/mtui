@@ -288,19 +288,23 @@ const handelCopyIcon = (name: string) => {
       <div class="title">Icon 图标</div>
       <div class="grid grid-rows-1 module-list">
         <div class="module-item">
-          <div class="mb-2 tit">基本用法</div>
+          <div class="my-2 tit">基本用法</div>
           <mt-icon name="biaoxing"></mt-icon>
         </div>
         <div class="module-item">
-          <div class="mb-2 tit">设置icon大小</div>
+          <div class="my-2 tit">旋转图标</div>
+          <mt-icon name="loading1" size="50" :is-rotate="true"></mt-icon>
+        </div>
+        <div class="module-item">
+          <div class="my-2 tit">设置icon大小</div>
           <mt-icon name="biaoxing" size="50"></mt-icon>
         </div>
         <div class="module-item">
-          <div class="mb-2 tit">设置icon颜色</div>
+          <div class="my-2 tit">设置icon颜色</div>
           <mt-icon name="biaoxing" size="50" color="red"></mt-icon>
         </div>
         <div class="module-item">
-          <div class="mb-2 tit">自定义icon样式</div>
+          <div class="my-2 tit">自定义icon样式</div>
           <div class="grid grid-cols-4 list">
             <div class="item">
               <mt-icon name="biaoxing" :icon-style="{ fontSize: '60rpx', color: 'green' }"></mt-icon>
@@ -335,7 +339,6 @@ const handelCopyIcon = (name: string) => {
   }
 }
 .tit {
-  margin-top: 20rpx;
   font-size: 24rpx;
   color: #000;
 }

@@ -1,0 +1,260 @@
+.mt-btn::after {
+  border: none;
+}
+
+.mt-btn {
+  position: relative;
+  border: 0;
+  z-index: 1;
+  /* #ifndef APP-NVUE */
+  display: inline-flex;
+  /* #endif */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 40rpx;
+  line-height: 1;
+  transition: all 0.15s;
+  // 避免边框某些场景可能被“裁剪”，不能设置为hidden
+  overflow: visible;
+  cursor: pointer;
+
+  &--bold-border {
+    border: 1px solid rgba(var(--white));
+  }
+
+  &--default {
+    border-color: rgba(var(--type-border-color));
+    color: rgba(var(--type-default));
+    background-color: rgba(var(--white));
+  }
+
+  &--text {
+    height: auto!important;
+    line-height: 1.8!important;
+    padding: 0;
+    border: none;
+    color: rgba(var(--type-default));
+    background-color: var(--type-transparent);
+    &::after {
+      display: none;
+    }
+  }
+
+  &--primary {
+    border-color: rgba(var(--type-primary));
+    color: rgba(var(--white));
+    background-color: rgba(var(--type-primary));
+  }
+
+  &--success {
+    border-color: rgba(var(--type-success));
+    color: rgba(var(--white));
+    background-color: rgba(var(--type-success));
+  }
+
+  &--error {
+    border-color: rgba(var(--type-error));
+    color: rgba(var(--white));
+    background-color: rgba(var(--type-error));
+  }
+
+  &--warning {
+    border-color: rgba(var(--type-warning));
+    color: rgba(var(--white));
+    background-color: rgba(var(--type-warning));
+  }
+
+  &--default--disabled {
+    border-color: rgba(var(--type-default-disabled));
+    color: rgba(var(--white));
+    background-color: rgba(var(--type-default-disabled));
+  }
+
+  &--primary--disabled {
+    border-color: rgba(var(--type-primary-disabled)) !important;
+    color: rgba(var(--white)) !important;
+    background-color: rgba(var(--type-primary-disabled)) !important;
+  }
+
+  &--success--disabled {
+    border-color: rgba(var(--type-success-disabled)) !important;
+    color: rgba(var(--white)) !important;
+    background-color: rgba(var(--type-success-disabled)) !important;
+  }
+
+  &--error--disabled {
+    border-color: rgba(var(--type-error-disabled)) !important;
+    color: rgba(var(--white)) !important;
+    background-color: rgba(var(--type-error-disabled)) !important;
+  }
+
+  &--warning--disabled {
+    border-color: rgba(var(--type-warning-disabled)) !important;
+    color: rgba(var(--white)) !important;
+    background-color: rgba(var(--type-warning-disabled)) !important;
+  }
+
+  &--primary--plain {
+    border-color: rgba(var(--type-primary)) !important;
+    color: rgba(var(--type-primary)) !important;
+    background-color: var(--transparent) !important;
+  }
+
+  &--success--plain {
+    border-color: rgba(var(--type-success)) !important;
+    color: rgba(var(--type-success)) !important;
+    background-color: var(--transparent) !important;
+  }
+
+  &--error--plain {
+    border-color: rgba(var(--type-error)) !important;
+    color: rgba(var(--type-error)) !important;
+    background-color: var(--transparent) !important;
+  }
+
+  &--warning--plain {
+    border-color: rgba(var(--type-warning)) !important;
+    color: rgba(var(--type-warning)) !important;
+    background-color: var(--transparent) !important;
+  }
+}
+
+.mt-hairline-border:after {
+  content: ' ';
+  position: absolute;
+  pointer-events: none;
+  // 设置为border-box，意味着下面的scale缩小为0.5，实际上缩小的是伪元素的内容（border-box意味着内容不含border）
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 199.8%;
+  height: 199.7%;
+  border: 1px solid currentColor;
+  -webkit-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  // 中心点作为变形(scale())的原点
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.mt-shape-rectangle,
+.mt-shape-rectangle::after {
+  border-radius: 0;
+}
+
+.mt-shape-circle,
+.mt-shape-circle::after {
+  border-radius: 100rpx;
+}
+
+.mt-shape-square,
+.mt-shape-square::after {
+  border-radius: 12rpx;
+}
+
+.mt-loading::after {
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+
+.mt-size-default {
+  height: 80rpx;
+  font-size: 30rpx;
+  line-height: 80rpx;
+}
+
+.mt-size-medium {
+  /* #ifndef APP-NVUE */
+  display: inline-flex;
+  /* #endif */
+  width: auto;
+  height: 70rpx;
+  padding: 0 80rpx;
+  font-size: 26rpx;
+  line-height: 70rpx;
+}
+
+.mt-size-mini {
+  /* #ifndef APP-NVUE */
+  display: inline-flex;
+  /* #endif */
+  width: auto;
+  height: 50rpx;
+  padding: 0 20rpx;
+  padding-top: 1px;
+  font-size: 22rpx;
+  line-height: 50rpx;
+}
+
+.mt-primary-plain-hover {
+  color: rgba(var(--white)) !important;
+  background: rgba(var(--type-primary)) !important;
+}
+
+.mt-default-plain-hover {
+  color: rgba(var(--white)) !important;
+  background: rgba(var(--type-default)) !important;
+}
+
+.mt-success-plain-hover {
+  color: rgba(var(--white)) !important;
+  background: rgba(var(--type-success)) !important;
+}
+
+.mt-warning-plain-hover {
+  color: rgba(var(--white)) !important;
+  background: rgba(var(--type-warning)) !important;
+}
+
+.mt-error-plain-hover {
+  color: rgba(var(--white)) !important;
+  background: rgba(var(--type-error)) !important;
+}
+
+.mt-info-plain-hover {
+  color: rgba(var(--white)) !important;
+  background: rgba(var(--type-info)) !important;
+}
+
+.mt-default-hover {
+  border-color: rgba(var(--type-primary)) !important;
+  color: rgba(var(--white)) !important;
+  background-color: rgba(var(--type-primary), var(--type-opacity)) !important;
+  &::after {
+    border-color: rgba(var(--type-primary)) !important;
+  }
+}
+
+.mt-text-hover {
+  color: rgba(var(--type-default)) !important;
+  opacity: var(--type-opacity);
+}
+
+
+.mt-primary-hover {
+  color: rgba(var(--white));
+  background: rgba(var(--type-primary), var(--type-opacity)) !important;
+}
+
+.mt-success-hover {
+  color: rgba(var(--white));
+  background: rgba(var(--type-success), var(--type-opacity)) !important;
+}
+
+.mt-info-hover {
+  color: rgba(var(--white));
+  background: rgba(var(--type-info), var(--type-opacity)) !important;
+}
+
+.mt-warning-hover {
+  color: rgba(var(--white));
+  background: rgba(var(--type-warning), var(--type-opacity)) !important;
+}
+
+.mt-error-hover {
+  color: rgba(var(--white));
+  background: rgba(var(--type-error), var(--type-opacity)) !important;
+}

@@ -5,6 +5,10 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    MtBadge: typeof import('./../components/mt-badge.vue')['default']
+    MtButton: typeof import('./../components/mt-button.vue')['default']
+    MtCell: typeof import('./../components/mt-cell.vue')['default']
+    MtCellItem: typeof import('./../components/mt-cell-item.vue')['default']
     MtIcon: typeof import('./../components/mt-icon.vue')['default']
     MtImage: typeof import('./../components/mt-image.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
